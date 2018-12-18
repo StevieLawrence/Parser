@@ -1,0 +1,21 @@
+a tokenizes as Identifier
+		a is a Valid Statement
+a = b tokenizes as Identifier Assignment Identifier
+		a = b is a Valid Statement
+num3 = num1/2 + num2 tokenizes as Identifier Assignment Identifier Operator Number Operator Identifier
+		num3 = num1/2 + num2 is a Valid Statement
+a = a + 1 tokenizes as Identifier Assignment Identifier Operator Number
+		a = a + 1 is a Valid Statement
+a + 2 * 3 - c + d*e tokenizes as Identifier Operator Number Operator Number Operator Identifier Operator Identifier Operator Identifier
+		a + 2 * 3 - c + d*e is a Valid Statement
+a              = a             + 2*a tokenizes as Identifier Assignment Identifier Operator Number Operator Identifier
+		a              = a             + 2*a is a Valid Statement
+a$1 + num1 tokenizes as Identifier Error
+$a1 = 20 tokenizes as Error
++ a + 10 tokenizes as Operator Identifier Operator Number
+		+ a + 10 is an Invalid Statement
+a = -1 tokenizes as Identifier Assignment Operator Number
+		a = -1 is an Invalid Statement
+a+=10 tokenizes as Identifier Operator Assignment Number
+		a+=10 is an Invalid Statement
+x=a++ tokenizes as Identifier Assignment Identifier Operator Error
